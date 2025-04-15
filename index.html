@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farshard | Revolutionizing Game Development with Psychological Depth</title>
+    <meta name="description" content="Farshard is revolutionizing game development with AI-driven psychological systems and character depth. Discover our innovative Claric Engine and flagship game.">
+    
+    <!-- Placeholder for actual CSS that would be in external file -->
+    <style>
+        :root {
+            --primary: #2A2356;
+            --secondary: #05F2DB;
+            --neutral: #3D4C53;
+            --dark: #121212;
+            --light: #f8f8f8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--primary);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            position: relative;
+            overflow: hidden;
+            margin-top: 70px;
+        }
+        
+        .hero-content {
+            max-width: 600px;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--light), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--primary);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            margin-left: 15px;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--secondary);
+            color: var(--primary);
+        }
+        
+        .neural-bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            opacity: 0.1;
+            background-image: url('placeholder-neural-network.svg');
+            background-size: cover;
+        }
+        
+        section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .section-title p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cards {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .card {
+            background-color: var(--primary);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            width: calc(33.333% - 20px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        
+        footer {
+            background-color: var(--primary);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column {
+            width: calc(25% - 20px);
+        }
+        
+        .footer-column h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive design would be expanded in actual implementation */
+        @media (max-width: 768px) {
+            .card {
+                width: calc(50% - 15px);
+            }
+            
+            .footer-column {
+                width: calc(50% - 15px);
+                margin-bottom: 30px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .card {
+                width: 100%;
+            }
+            
+            .footer-column {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">FARSHARD</div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="https://claricengine.com">Claric Engine</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Beyond Code. Beyond Graphics. Into the Depths of Character.</h1>
+            <p>Farshard is revolutionizing game development by integrating advanced AI with psychological systems, allowing developers to create characters that feel genuinely alive and stories that evolve organically.</p>
+            <div class="hero-buttons">
+                <a href="https://claricengine.com" class="btn">Explore the Engine</a>
+                <a href="#game" class="btn btn-outline">Discover the Game</a>
+            </div>
+        </div>
+        <div class="neural-bg"></div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Revolutionizing Game Development</h2>
+                <p>At Farshard, we're pioneering the next frontier of game development: psychological realism and emergent narrative.</p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <h3>Psychological Depth</h3>
+                    <p>Our technology creates characters with genuine emotional complexity, evolving beyond scripted responses to form authentic personalities.</p>
+                </div>
+                <div class="card">
+                    <h3>AI Integration</h3>
+                    <p>We seamlessly fuse artificial intelligence with human creativity, enabling new possibilities for interactive storytelling.</p>
+                </div>
+                <div class="card">
+                    <h3>Creator Empowerment</h3>
+                    <p>Our accessible yet powerful tools enable developers of all sizes to create emotionally resonant experiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="products" style="background-color: var(--neutral);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Products</h2>
+                <p>Farshard offers a dual approach to revolutionizing game development.</p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <h3>Claric Engine</h3>
+                    <p>A revolutionary game development platform that uniquely integrates AI-driven character psychology and emergent storytelling systems.</p>
+                    <br>
+                    <a href="https://claricengine.com" class="btn btn-outline">Learn More</a>
+                </div>
+                <div class="card">
+                    <h3>Echoes of the Unconscious</h3>
+                    <p>Our flagship game showcasing the engine's capabilities, a narrative-driven psychological adventure in a near-future world.</p>
+                    <br>
+                    <a href="https://echoes.claricengine.com" class="btn btn-outline">Discover</a>
+                </div>
+                <div class="card">
+                    <h3>Psychological Systems Marketplace</h3>
+                    <p>A community-driven platform for sharing and monetizing psychological profiles, behaviors, and narrative systems.</p>
+                    <br>
+                    <a href="#" class="btn btn-outline">Coming Soon</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Team</h2>
+                <p>We're a diverse team of developers, psychologists, and storytellers united by a vision to transform interactive experiences.</p>
+            </div>
+            <!-- Team member cards would go here in the actual implementation -->
+            <div class="center-button" style="text-align: center; margin-top: 40px;">
+                <a href="#careers" class="btn">Join Our Team</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact" style="background-color: var(--primary);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p>Interested in learning more about Farshard? Contact us for partnership opportunities, press inquiries, or career information.</p>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="mailto:info@farshard.com" class="btn">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="https://claricengine.com">Claric Engine</a></li>
+                        <li><a href="#">Echoes of the Unconscious</a></li>
+                        <li><a href="#">Marketplace</a></li>
+                        <li><a href="#">Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press Kit</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Developers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">EULA</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Farshard, Inc. All rights reserved.</p>
+                <p>Farshard™, Claric Engine™, and Echoes of the Unconscious™ are trademarks of Farshard, Inc.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

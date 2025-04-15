@@ -1,0 +1,30 @@
+farshard.github.io/
+├── CNAME                  # Contains: farshard.com
+├── .nojekyll              # Disables Jekyll processing
+├── index.html             # Main company homepage
+├── favicon.ico            # Site favicon
+├── robots.txt             # Search engine instructions
+├── sitemap.xml            # Site structure for search engines
+├── assets/
+│   ├── css/
+│   │   ├── main.css       # Main stylesheet
+│   │   └── responsive.css # Mobile/responsive styles
+│   ├── js/
+│   │   └── main.js        # Main JavaScript file
+│   ├── fonts/
+│   │   └── ...            # Custom fonts
+│   └── images/
+│       ├── logo.svg       # Company logo
+│       ├── hero-bg.jpg    # Hero background image
+│       └── team/          # Team member photos
+├── about/
+│   └── index.html         # About page
+├── careers/
+│   └── index.html         # Careers page
+├── contact/
+│   └── index.html         # Contact page
+├── products/
+│   └── index.html         # Products overview
+└── .github/
+    └── workflows/
+        └── deploy.yml     # (Optional) GitHub Actions workflow

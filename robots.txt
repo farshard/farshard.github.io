@@ -1,0 +1,5 @@
+User-agent: * 
+Allow: / 
+Sitemap: https://farshard.com/sitemap.xml 
+Allow: / 
+Sitemap: https://farshard.com/sitemap.xml 
