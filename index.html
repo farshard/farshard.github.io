@@ -242,6 +242,38 @@
             padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
+
+        .media-player {
+            margin-top: 30px;
+            padding: 24px;
+            border: 1px solid rgba(5, 242, 219, 0.35);
+            border-radius: 10px;
+            background: rgba(42, 35, 86, 0.35);
+        }
+
+        .media-player h3 {
+            color: var(--secondary);
+            margin-bottom: 12px;
+        }
+
+        .media-player audio {
+            width: 100%;
+            margin: 12px 0 8px;
+        }
+
+        .media-player .player-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 12px;
+        }
+
+        .player-status {
+            margin-top: 10px;
+            font-size: 14px;
+            opacity: 0.85;
+        }
         
         /* Responsive design would be expanded in actual implementation */
         @media (max-width: 768px) {
@@ -274,6 +306,7 @@
                 <ul>
                     <li><a href="#about">About</a></li>
                     <li><a href="#products">Products</a></li>
+                    <li><a href="#ascii-rpg">ASCII RPG</a></li>
                     <li><a href="#team">Team</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="https://claricengine.com">Claric Engine</a></li>
@@ -321,7 +354,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Our Products</h2>
-                <p>Farshard offers a dual approach to revolutionizing game development.</p>
+                <p>Farshard offers a practical product stack spanning engine R&amp;D, playable prototypes, and creator tooling.</p>
             </div>
             <div class="cards">
                 <div class="card">
@@ -342,6 +375,35 @@
                     <br>
                     <a href="#" class="btn btn-outline">Coming Soon</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ascii-rpg" class="ascii-rpg" style="background-color: var(--dark);">
+        <div class="container">
+            <div class="section-title">
+                <h2>ASCII RPG Initiative</h2>
+                <p>Our active ASCII RPG prototyping workstream is where we rapidly test combat readability, narrative systems, and emergent character behavior before scaling mechanics into larger productions.</p>
+            </div>
+            <div style="text-align: center; max-width: 760px; margin: 0 auto;">
+                <p>By building in a constrained format, we validate gameplay loops and psychological mechanics early, then transfer the strongest systems into Claric Engine pipelines.</p>
+                <div style="margin-top: 30px;">
+                    <a href="#contact" class="btn">Request Playtest Access</a>
+                </div>
+            </div>
+
+            <div class="media-player" aria-labelledby="high-estates-theme-heading">
+                <h3 id="high-estates-theme-heading">High Estates — Title Theme (In Production)</h3>
+                <p>Listen to the current theme build below as production progresses.</p>
+                <audio id="high-estates-theme" preload="none" controls>
+                    <source src="assets/audio/high-estates-theme-preview.mp3" type="audio/mpeg">
+                    Your browser does not support the audio player.
+                </audio>
+                <div class="player-actions">
+                    <button class="btn" id="play-theme-btn" type="button">Play Theme</button>
+                    <button class="btn btn-outline" id="pause-theme-btn" type="button">Pause</button>
+                </div>
+                <p class="player-status" id="theme-player-status">Status: Ready.</p>
             </div>
         </div>
     </section>
@@ -412,10 +474,44 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Farshard, Inc. All rights reserved.</p>
+                <p>&copy; 2026 Farshard, Inc. All rights reserved.</p>
                 <p>Farshard™, Claric Engine™, and Echoes of the Unconscious™ are trademarks of Farshard, Inc.</p>
             </div>
         </div>
     </footer>
+    <script>
+        (function () {
+            const audio = document.getElementById('high-estates-theme');
+            const playBtn = document.getElementById('play-theme-btn');
+            const pauseBtn = document.getElementById('pause-theme-btn');
+            const status = document.getElementById('theme-player-status');
+
+            if (!audio || !playBtn || !pauseBtn || !status) return;
+
+            playBtn.addEventListener('click', async () => {
+                try {
+                    await audio.play();
+                } catch (error) {
+                    status.textContent = 'Status: Unable to play audio. Add assets/audio/high-estates-theme-preview.mp3.';
+                }
+            });
+
+            pauseBtn.addEventListener('click', () => {
+                audio.pause();
+            });
+
+            audio.addEventListener('playing', () => {
+                status.textContent = 'Status: Playing High Estates theme.';
+            });
+
+            audio.addEventListener('pause', () => {
+                status.textContent = 'Status: Paused.';
+            });
+
+            audio.addEventListener('ended', () => {
+                status.textContent = 'Status: Playback finished.';
+            });
+        })();
+    </script>
 </body>
 </html>
